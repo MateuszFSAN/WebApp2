@@ -9,96 +9,51 @@
 
     <div class="calculator-buttons">
         <button type="button" class="btn bg-success"
-                onclick="addNumber('7')">
-            7
-        </button>
-
-        <button type="button" class="btn bg-success"
-                onclick="addNumber('8')">
-            8
-        </button>
-
-        <button type="button" class="btn bg-success"
-                onclick="addNumber('9')">
-            9
-        </button>
-
-        <button type="button" class="btn bg-secondary"
-                onclick="addOperation('/')">
-            /
-        </button>
-
-        <button type="button" class="btn bg-secondary add-button"
-                onclick="addOperation('+')">
-            +
-        </button>
+        onclick="addNumber('7')">7</button>
+        <button type="button" class="btn bg-success" 
+        onclick="addNumber('8')">8</button>
+        <button type="button" class="btn bg-success" 
+        onclick="addNumber('9')">9</button>
+        <button type="button" class="btn bg-secondary operation" 
+        onclick="addOperation('/')">/</button>
+        <button type="button" class="btn bg-secondary add-button operation"
+                onclick="addOperation('+')">+</button>
 
 
 
 
-
-        <button type="button" class="btn bg-success"
-                onclick="addNumber('4')">
-            4
-        </button>
-
-        <button type="button" class="btn bg-success"
-                onclick="addNumber('5')">
-            5
-        </button>
-
-        <button type="button" class="btn bg-success"
-                onclick="addNumber('6')">
-            6
-        </button>
-
-        <button type="button" class="btn bg-secondary"
-                onclick="addOperation('-')">
-            -
-        </button>
+        <button type="button" class="btn bg-success" 
+        onclick="addNumber('4')">4</button>
+        <button type="button" class="btn bg-success" 
+        onclick="addNumber('5')">5</button>
+        <button type="button" class="btn bg-success" 
+        onclick="addNumber('6')">6</button>
+        <button type="button" class="btn bg-secondary operation"
+                onclick="addOperation('-')">-</button>
 
 
 
 
-        <button type="button" class="btn bg-success"
-                onclick="addNumber('1')">1</button>
-
-        <button type="button" class="btn bg-success"
-                onclick="addNumber('2')">2</button>
-
-        <button type="button" class="btn bg-success"
-                onclick="addNumber('3')">
-            3
-        </button>
-
-        <button type="button" class="btn bg-secondary"
-                onclick="addOperation('*')">
-            *
-        </button>
-
-        <button type="button" class="btn bg-primary result-button"
-                onclick="getResult()">
-            =
-        </button>
-
+        <button type="button" class="btn bg-success" 
+        onclick="addNumber('1')">1</button>
+        <button type="button" class="btn bg-success" 
+        onclick="addNumber('2')">2</button>
+        <button type="button" class="btn bg-success" 
+        onclick="addNumber('3')">3</button>
+        <button type="button" class="btn bg-secondary operation"
+                onclick="addOperation('*')">*</button>
+        <button type="button" class="btn bg-primary result-button operation" 
+        onclick="getResult()">=</button>
 
 
 
 
         <button type="button" class="btn bg-success zero-button"
-                onclick="addNumber('0')">
-            0
-        </button>
-
-        <button type="button" class="btn bg-success"
-                onclick="addNumber(',')'">
-            ,
-        </button>
-
-        <button type="button" class="btn bg-danger"
-                onclick="clearScreen()">
-            C
-        </button>
+                onclick="addNumber('0')">0</button>
+        <button type="button" class="btn bg-secondary operation"
+                onclick="addOperation(',')">,</button>
+        <button type="button" class="btn bg-danger" 
+        onclick="clearScreen()">C</button>
 
     </div>
 
@@ -123,9 +78,13 @@
             else if (number == ',' && availableOperations.includes(val.slice(-1)))
                     number='0,';
             screenInput.val(val + number);
+
+
+            setOperationBtnsAvailable(true);
         }
         function addOperation(operation) {
             screenInput.val(screenInput.val() + operation);
+            setOperationBtnsAvailable(false);
         }
         function clearScreen() {
             screenInput.val('0');
@@ -147,9 +106,12 @@
                         alert(data.message);
                     },
 
-                dataType: "json"
-                }
+                    dataType: "json"
+                
             });
+        }
+        function setOperationBtnsAvailable(state) {
+            $('.operation').prop('disabled', !state);
         }
     </script>
 
