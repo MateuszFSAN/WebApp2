@@ -50,8 +50,8 @@
 
         <button type="button" class="btn bg-success zero-button"
                 onclick="addNumber('0')">0</button>
-        <button type="button" class="btn bg-secondary operation"
-                onclick="addOperation(',')">,</button>
+        <button type="button" class="btn bg-secondary coma"
+                onclick="addComa(',')">,</button>
         <button type="button" class="btn bg-danger" 
         onclick="clearScreen()">C</button>
 
@@ -81,14 +81,25 @@
 
 
             setOperationBtnsAvailable(true);
+            
         }
         function addOperation(operation) {
             screenInput.val(screenInput.val() + operation);
             setOperationBtnsAvailable(false);
+            setComaBtnAvailable(true);
         }
         function clearScreen() {
             screenInput.val('0');
         }
+
+        function addComa() {
+                var val = screenInput.val();
+            screenInput.val(val + ',');
+                setComaBtnAvailable(false)
+                }
+
+               
+        
         function getResult() {
             $.ajax({
                 type: 'POST',
@@ -109,6 +120,9 @@
                     dataType: "json"
                 
             });
+        }
+        function setComaBtnAvailable(state){
+            $('.coma').prop('disabled', !state);
         }
         function setOperationBtnsAvailable(state) {
             $('.operation').prop('disabled', !state);
