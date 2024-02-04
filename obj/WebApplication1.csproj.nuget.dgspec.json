@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rozja\\Source\\Repos\\WebApp2\\WebApplication1.csproj": {}
+    "C:\\Users\\rozja\\source\\repos\\WebApp2\\WebApplication1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rozja\\Source\\Repos\\WebApp2\\WebApplication1.csproj": {
+    "C:\\Users\\rozja\\source\\repos\\WebApp2\\WebApplication1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rozja\\Source\\Repos\\WebApp2\\WebApplication1.csproj",
+        "projectUniqueName": "C:\\Users\\rozja\\source\\repos\\WebApp2\\WebApplication1.csproj",
         "projectName": "WebApplication1",
-        "projectPath": "C:\\Users\\rozja\\Source\\Repos\\WebApp2\\WebApplication1.csproj",
+        "projectPath": "C:\\Users\\rozja\\source\\repos\\WebApp2\\WebApplication1.csproj",
         "packagesPath": "C:\\Users\\rozja\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rozja\\Source\\Repos\\WebApp2\\obj\\",
+        "outputPath": "C:\\Users\\rozja\\source\\repos\\WebApp2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\rozja\\AppData\\Roaming\\NuGet\\NuGet.Config",
