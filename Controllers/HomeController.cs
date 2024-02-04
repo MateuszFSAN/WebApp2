@@ -19,8 +19,15 @@ namespace WebApplication1.Controllers
         {
             return View();
         }
-
+        public IActionResult Kalkulator()
+        {
+            return View();
+        }
         public IActionResult Privacy()
+        {
+            return View();
+        }
+        public IActionResult Strona()
         {
             return View();
         }
